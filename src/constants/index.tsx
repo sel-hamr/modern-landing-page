@@ -36,6 +36,13 @@ import {
   yourlogo,
 } from "../assets";
 
+import cart1 from "../assets/benefits/card-1.svg";
+import cart2 from "../assets/benefits/card-2.svg";
+import cart3 from "../assets/benefits/card-3.svg";
+import cart4 from "../assets/benefits/card-4.svg";
+import cart5 from "../assets/benefits/card-5.svg";
+import cart6 from "../assets/benefits/card-6.svg";
+
 export const navigation = [
   {
     id: "0",
@@ -246,7 +253,7 @@ export const benefits = [
     id: "0",
     title: "Ask anything",
     text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
-    backgroundUrl: "./src/assets/benefits/card-1.svg",
+    backgroundUrl: cart1,
     iconUrl: benefitIcon1,
     imageUrl: benefitImage2,
   },
@@ -254,7 +261,7 @@ export const benefits = [
     id: "1",
     title: "Improve everyday",
     text: "The app uses natural language processing to understand user queries and provide accurate and relevant responses.",
-    backgroundUrl: "./src/assets/benefits/card-2.svg",
+    backgroundUrl: cart2,
     iconUrl: benefitIcon2,
     imageUrl: benefitImage2,
     light: true,
@@ -263,7 +270,7 @@ export const benefits = [
     id: "2",
     title: "Connect everywhere",
     text: "Connect with the AI chatbot from anywhere, on any device, making it more accessible and convenient.",
-    backgroundUrl: "./src/assets/benefits/card-3.svg",
+    backgroundUrl: cart3,
     iconUrl: benefitIcon3,
     imageUrl: benefitImage2,
   },
@@ -271,7 +278,7 @@ export const benefits = [
     id: "3",
     title: "Fast responding",
     text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
-    backgroundUrl: "./src/assets/benefits/card-4.svg",
+    backgroundUrl: cart4,
     iconUrl: benefitIcon4,
     imageUrl: benefitImage2,
     light: true,
@@ -280,7 +287,7 @@ export const benefits = [
     id: "4",
     title: "Ask anything",
     text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
-    backgroundUrl: "./src/assets/benefits/card-5.svg",
+    backgroundUrl: cart5,
     iconUrl: benefitIcon1,
     imageUrl: benefitImage2,
   },
@@ -288,7 +295,7 @@ export const benefits = [
     id: "5",
     title: "Improve everyday",
     text: "The app uses natural language processing to understand user queries and provide accurate and relevant responses.",
-    backgroundUrl: "./src/assets/benefits/card-6.svg",
+    backgroundUrl: cart6,
     iconUrl: benefitIcon2,
     imageUrl: benefitImage2,
   },
