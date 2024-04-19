@@ -15,7 +15,7 @@ function Button({
   children,
   className,
   href,
-  ...props
+  onClick,
 }: ButtonProps) {
   const classes = `relative inline-flex items-center button justify-start transition-colors h-11 hover:text-color-1 ${
     px || "px-7"
@@ -23,7 +23,7 @@ function Button({
 
   const spanClasses = "relative z-10";
   const renderButton = () => (
-    <button className={classes}>
+    <button className={classes} onClick={onClick}>
       <span className={spanClasses}>{children}</span>
       {ButtonSvg(white)}
     </button>
