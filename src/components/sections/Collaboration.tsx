@@ -1,10 +1,13 @@
-import { brainwaveSymbol, check } from "../assets";
-import { collabApps, collabContent, collabText } from "../constants";
-import Button from "./Button";
-import Section from "./Section";
-import { LeftCurve, RightCurve } from "./design/Collaboration";
+import { useRef } from "react";
+import { brainwaveSymbol, check } from "../../assets";
+import { collabApps, collabContent, collabText } from "../../constants";
+import Button from "../Button";
+import Section from "../Section";
+import { LeftCurve, RightCurve } from "../design/Collaboration";
+import { MouseParallax } from "react-just-parallax";
 
 const Collaboration = () => {
+  const parallaxRef = useRef(null);
   return (
     <Section crosses>
       <div className="container lg:flex">
@@ -49,29 +52,35 @@ const Collaboration = () => {
               </div>
             </div>
 
-            <ul>
-              {collabApps.map((app, index) => (
-                <li
-                  key={app.id}
-                  className={`absolute top-0 left-1/2 h-1/2 -ml-[1.6rem] origin-bottom rotate-${
-                    index * 45
-                  }`}
-                >
-                  <div
-                    className={`relative -top-[1.6rem] flex w-[3.2rem] h-[3.2rem] bg-n-7 border border-n-1/15 rounded-xl -rotate-${
+            <ul ref={parallaxRef}>
+              <MouseParallax
+                isAbsolutelyPositioned
+                shouldResetPosition
+                strength={0.009}
+              >
+                {collabApps.map((app, index) => (
+                  <li
+                    key={app.id}
+                    className={`absolute top-0 left-1/2 h-1/2 -ml-[1.6rem] origin-bottom rotate-${
                       index * 45
                     }`}
                   >
-                    <img
-                      className="m-auto"
-                      width={app.width}
-                      height={app.height}
-                      alt={app.title}
-                      src={app.icon}
-                    />
-                  </div>
-                </li>
-              ))}
+                    <div
+                      className={`relative -top-[1.6rem] flex w-[3.2rem] h-[3.2rem] bg-n-7 border border-n-1/15 rounded-xl -rotate-${
+                        index * 45
+                      }`}
+                    >
+                      <img
+                        className="m-auto"
+                        width={app.width}
+                        height={app.height}
+                        alt={app.title}
+                        src={app.icon}
+                      />
+                    </div>
+                  </li>
+                ))}
+              </MouseParallax>
             </ul>
 
             <LeftCurve />
