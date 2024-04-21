@@ -1,8 +1,10 @@
 import ButtonGradient from "./assets/svg/ButtonGradient";
-import Benefits from "./components/Benefits";
-import Collaboration from "./components/Collaboration";
+// import Benefits from "./components/sections/Benefits";
+import Collaboration from "./components/sections/Collaboration";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
+import Hero from "./components/sections/Hero";
+import Services from "./components/sections/Services";
+import Benefits from "./components/sections/Benefits";
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
         <Hero />
         <Benefits />
         <Collaboration />
+        <Services />
       </div>
       <ButtonGradient />
     </>
