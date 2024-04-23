@@ -1,14 +1,26 @@
-import { notification1 } from "../assets";
-import { notificationImages } from "../constants";
+import { MotionValue, delay, motion } from "framer-motion";
+import { notification1 } from "../../assets";
+import { notificationImages } from "../../constants";
+import {
+  notificationIlVariants,
+  notificationUlVariants,
+  notificationVariants,
+} from "./animation";
 
 interface NotificationProps {
   className?: string;
   title: string;
+  style?: { [key: string]: MotionValue<number> };
 }
 
-const Notification = ({ className, title }: NotificationProps) => {
+const Notification = ({ className, title, style }: NotificationProps) => {
   return (
-    <div
+    <motion.div
+      style={style}
+      variants={notificationVariants}
+      initial="hidden"
+      whileInView="visible"
+      transition={{ duration: 0.5 }}
       className={`${
         className || ""
       } flex items-center p-4 pr-6 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl gap-5`}
@@ -44,7 +56,7 @@ const Notification = ({ className, title }: NotificationProps) => {
           <div className="body-2 text-n-13">1m ago</div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
