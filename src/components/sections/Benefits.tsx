@@ -3,7 +3,19 @@ import Heading from "../Heading";
 import Section from "../Section";
 import Arrow from "../../assets/svg/Arrow";
 import { GradientLight } from "../design/Benefits";
-import ClipPath from "../../assets/svg/ClipPath";
+import { motion } from "framer-motion";
+
+const variants = {
+  hidden: { opacity: 0, x: 100 },
+  visible: (custom: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.6,
+      delay: custom * 0.1,
+    },
+  }),
+};
 
 const Benefits = () => {
   return (
@@ -15,12 +27,16 @@ const Benefits = () => {
         />
 
         <div className="flex flex-wrap gap-10 mb-10">
-          {benefits.map((item) => (
-            <div
+          {benefits.map((item, key) => (
+            <motion.div
               className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
               style={{
                 backgroundImage: `url(${item.backgroundUrl})`,
               }}
+              variants={variants}
+              initial="hidden"
+              whileInView="visible"
+              custom={key}
               key={item.id}
             >
               <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
@@ -41,7 +57,7 @@ const Benefits = () => {
               </div>
 
               {item.light && <GradientLight />}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
